@@ -90,15 +90,23 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section - Flexbox Layout untuk Teks & Foto */
         #home {
-            padding: 7rem 0 2rem 0;
+            padding: 8rem 0 2rem 0;
             display: flex;
             align-items: center;
         }
 
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            width: 100%;
+        }
+
         .hero-content {
-            max-width: 750px;
+            max-width: 650px;
             opacity: 0;
             animation: munculDariAtas 0.8s ease-out 0.2s forwards;
         }
@@ -111,6 +119,29 @@
 
         .hero-content h1 span {
             color: var(--accent-color);
+        }
+
+        /* Pembungkus Foto Profil */
+        .hero-image {
+            opacity: 0;
+            animation: munculDariAtas 0.8s ease-out 0.4s forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 24px; /* Sudut melengkung modern berbentuk persegi smooth */
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03);
         }
 
         .badge-container {
@@ -270,7 +301,21 @@
                 text-align: center;
             }
             .nav-links.active { display: flex; }
+            
+            /* Tampilan Hero saat di HP otomatis bertumpuk vertikal */
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
             .hero-content h1 { font-size: 2rem; }
+            .badge-container { justify-content: center; }
+            
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
             .btn-group, .contact-wrapper .btn-group {
                 flex-direction: column;
                 width: 100%;
@@ -325,22 +370,30 @@
 
     <section id="home">
         <div class="container">
-            <div class="hero-content">
-                <h3 style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 0.3rem;">Halo semua, saya</h3>
-                <h1><span>Riza Putra Mugiartho Mohan</span></h1>
-                <div class="badge-container">
-                    <span class="badge"><i class="fa-solid fa-graduation-cap"></i> SMK Yadika 12</span>
-                    <span class="badge"><i class="fa-solid fa-network-wired"></i> Jurusan TJKT</span>
-                    <span class="badge"><i class="fa-solid fa-location-dot"></i> Depok</span>
-                    <span class="badge"><i class="fa-solid fa-cake-candles"></i> 23 Maret 2009</span>
+            <div class="hero-container">
+                
+                <div class="hero-content">
+                    <h3 style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 0.3rem;">Halo semua, saya</h3>
+                    <h1><span>Riza Putra Mugiartho Mohan</span></h1>
+                    <div class="badge-container">
+                        <span class="badge"><i class="fa-solid fa-graduation-cap"></i> SMK Yadika 12</span>
+                        <span class="badge"><i class="fa-solid fa-network-wired"></i> Jurusan TJKT</span>
+                        <span class="badge"><i class="fa-solid fa-location-dot"></i> Depok</span>
+                        <span class="badge"><i class="fa-solid fa-cake-candles"></i> 23 Maret 2009</span>
+                    </div>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1rem;">
+                        Seorang siswa SMK jurusan Teknik Jaringan Komputer dan Telekomunikasi yang memiliki antusiasme tinggi pada infrastruktur jaringan, hardware IT, teknologi IoT, serta dunia seni visual kreatif.
+                    </p>
+                    <div class="btn-group">
+                        <a href="#tentang" class="btn">Mengenal Saya</a>
+                        <a href="#kontak" class="btn btn-alt">Hubungi Saya</a>
+                    </div>
                 </div>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1rem; max-width: 700px;">
-                    Seorang siswa SMK jurusan Teknik Jaringan Komputer dan Telekomunikasi yang memiliki antusiasme tinggi pada infrastruktur jaringan, hardware IT, teknologi IoT, serta dunia seni visual kreatif.
-                </p>
-                <div class="btn-group">
-                    <a href="#tentang" class="btn">Mengenal Saya</a>
-                    <a href="#kontak" class="btn btn-alt">Hubungi Saya</a>
+
+                <div class="hero-image">
+                    <img src="https://i.ibb.co.com/TM89B5mm/96919.jpg" alt="Foto Riza Putra Mugiartho Mohan">
                 </div>
+
             </div>
         </div>
     </section>
