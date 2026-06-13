@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Riza Putra Mugiartho Mohan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* --- KEYFRAMES ANIMASI --- */
+        @keyframes munculDariAtas {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #334155;
+            animation: munculDariAtas 0.8s ease-out forwards;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #home {
+            padding: 10rem 0 5rem 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            opacity: 0;
+            animation: munculDariAtas 1s ease-out 0.3s forwards;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent-color);
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background-color: var(--card-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #334155;
+        }
+
+        /* Section Styles */
+        section { padding: 5rem 0; }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .about-box {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid #334155;
+            padding: 2.5rem;
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .personality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        /* Style Khusus untuk Kartu Hobi yang Bisa Diklik */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card-link .card:hover {
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .p-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .p-item i {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-top: 3px;
+        }
+
+        /* Contact Wrapper */
+        .contact-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+        .btn-alt { background-color: transparent; color: var(--text-color); border: 1px solid #334155; }
+        .btn-alt:hover { background-color: var(--card-bg); }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #334155;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Mobile View */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                padding: 1.5rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid #334155;
+                text-align: center;
+            }
+            .nav-links.active { display: flex; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .btn-group, .contact-wrapper .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn { width: 100%; justify-content: center; }
+        }
+
+        /* Floating Button Mode Laptop */
+        .desktop-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e2e8f0;
+            color: #0f172a;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+            cursor: pointer;
+            z-index: 9999;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        .desktop-toggle-btn:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <button class="desktop-toggle-btn" onclick="toggleDesktopMode()">
+        <i class="fa-solid fa-laptop"></i> <span id="btn-text">Lihat Mode Laptop</span>
+    </button>
+
+    <header>
+        <nav class="container">
+            <div class="logo">Riza.Mohan</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#tentang" onclick="toggleMenu()">Tentang</a></li>
+                <li><a href="#pengalaman" onclick="toggleMenu()">Pengalaman</a></li>
+                <li><a href="#hobi" onclick="toggleMenu()">Hobi</a></li>
+                <li><a href="#kontak" onclick="toggleMenu()">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h3 style="color: var(--text-muted); font-size: 1.3rem;">Halo semua, saya</h3>
+                <h1><span>Riza Putra Mugiartho Mohan</span></h1>
+                <div class="badge-container">
+                    <span class="badge"><i class="fa-solid fa-graduation-cap"></i> SMK Yadika 12</span>
+                    <span class="badge"><i class="fa-solid fa-network-wired"></i> Jurusan TJKT</span>
+                    <span class="badge"><i class="fa-solid fa-location-dot"></i> Depok</span>
+                    <span class="badge"><i class="fa-solid fa-cake-candles"></i> 23 Maret 2009</span>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Seorang siswa SMK jurusan Teknik Jaringan Komputer dan Telekomunikasi yang memiliki antusiasme tinggi pada infrastruktur jaringan, hardware IT, teknologi IoT, serta dunia seni visual kreatif.
+                </p>
+                <div class="btn-group">
+                    <a href="#tentang" class="btn">Mengenal Saya</a>
+                    <a href="#kontak" class="btn btn-alt">Hubungi Saya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" style="background-color: #0b111e;">
+        <div class="container">
+            <h2 class="section-title">Karakter & Etos Kerja</h2>
+            <div class="about-box">
+                <p style="font-size: 1.1rem; color: var(--text-color); text-align: center; margin-bottom: 1.5rem;">
+                    "Saya adalah seorang <strong>INFP</strong> yang memiliki komitmen kuat dalam perkembangan diri dan penyelesaian masalah secara terstruktur."
+                </p>
+                
+                <div class="personality-grid">
+                    <div class="p-item">
+                        <i class="fa-solid fa-brain"></i>
+                        <div>
+                            <h4>Sabar & Solutif</h4>
+                            <p>Menghadapi tantangan teknis dengan kepala dingin dan selalu mencari jalan keluar terbaik.</p>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <i class="fa-solid fa-users"></i>
+                        <div>
+                            <h4>Mudah Beradaptasi</h4>
+                            <p>Mampu bersosialisasi dengan cepat dan fleksibel ketika memasuki lingkungan baru.</p>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                        <div>
+                            <h4>Semangat Hal Baru</h4>
+                            <p>Memiliki rasa ingin tahu yang tinggi dan antusiasme besar terhadap teknologi baru.</p>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <i class="fa-solid fa-infinity"></i>
+                        <div>
+                            <h4>Konsisten</h4>
+                            <p>Menjaga ritme kerja jangka panjang demi mencapai hasil maksimal pada setiap proyek.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pengalaman">
+        <div class="container">
+            <h2 class="section-title">Pengalaman Teknik</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fa-solid fa-server"></i>
+                    <h3>Konfigurasi MikroTik</h3>
+                    <p>Konfigurasi jaringan menggunakan perangkat MikroTik, termasuk setup jaringan Ethernet dan pembuatan sistem Hotspot.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <h3>Instalasi Fiber Optic (FO)</h3>
+                    <p>Keahlian praktis dalam penanganan, penarikan, dan pemasangan kabel Fiber Optic untuk infrastruktur berkecepatan tinggi.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-video"></i>
+                    <h3>Pemasangan CCTV</h3>
+                    <p>Melakukan instalasi hardware, penarikan kabel koaksial/UTP, hingga konfigurasi sistem keamanan CCTV.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>Robotika & IoT (ESP32)</h3>
+                    <p>Berhasil merakit dan memprogram lengan robot (Arm Robot) skala kecil berbasis mikrokontroler ESP32.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobi" style="background-color: #111a2e;">
+        <div class="container">
+            <h2 class="section-title">Hobi & Ketertarikan (Bisa Diklik)</h2>
+            <div class="grid">
+                
+                <a href="https://www.tradingview.com/symbols/XAUUSD/" target="_blank" class="card-link">
+                    <div class="card">
+                        <i class="fa-solid fa-chart-line" style="color: #4ade80;"></i>
+                        <h3>Trading & Finansial</h3>
+                        <p>Aktif memantau pergerakan market trading untuk menganalisis tren harga dan peluang pasar. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik untuk pantau XAUUSD &rarr;</strong></p>
+                    </div>
+                </a>
+
+                <div class="card">
+                    <i class="fa-solid fa-palette" style="color: #f43f5e;"></i>
+                    <h3>Menggambar & Seni</h3>
+                    <p>Suka menuangkan ide kreativitas dan mengasah fokus lewat hobi menggambar di waktu luang.</p>
+                </div>
+
+                <a href="https://www.instagram.com/explore/tags/mainsilatjakarta/" target="_blank" class="card-link">
+                    <div class="card">
+                        <i class="fa-solid fa-user-ninja" style="color: #ef4444;"></i>
+                        <h3>Seni Bela Diri</h3>
+                        <p>Menekuni olahraga Pencak Silat sebagai sarana melatih disiplin dan pertahanan diri. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat profil Silat &rarr;</strong></p>
+                    </div>
+                </a>
+
+                <a href="https://ftlgym.com/" target="_blank" class="card-link">
+                    <div class="card">
+                        <i class="fa-solid fa-dumbbell" style="color: #fbbf24;"></i>
+                        <h3>Kesehatan & Gym</h3>
+                        <p>Rutin melakukan latihan beban di gym untuk menjaga kebugaran tubuh tetap prima. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat FTL Gym &rarr;</strong></p>
+                    </div>
+                </a>
+
+                <a href="https://tk8.tekken.com/" target="_blank" class="card-link">
+                    <div class="card">
+                        <i class="fa-solid fa-gamepad" style="color: #a855f7;"></i>
+                        <h3>Gaming (Tekken 8)</h3>
+                        <p>Menggemari game kompetitif fighting, khususnya mengasah strategi pertarungan di Tekken 8. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik kunjungi situs Tekken &rarr;</strong></p>
+                    </div>
+                </a>
+
+                <a href="https://myanimelist.net/anime/20583/Haikyuu" target="_blank" class="card-link">
+                    <div class="card">
+                        <i class="fa-solid fa-volleyball" style="color: #3b82f6;"></i>
+                        <h3>Olahraga Voli</h3>
+                        <p>Senang bermain bola voli bersama tim untuk melatih kerja sama dan refleks. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik info Anime Haikyuu!! &rarr;</strong></p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak">
+        <div class="container">
+            <h2 class="section-title">Mari Terhubung</h2>
+            <div class="contact-wrapper">
+                <p style="text-align: center; max-width: 500px; color: var(--text-muted);">
+                    Silakan hubungi saya melalui platform di bawah ini:
+                </p>
+                <div class="btn-group">
+                    <a href="https://wa.me/628985703478" target="_blank" class="btn" style="background-color: #25D366; color: white;">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://instagram.com/rizzamohann2330" target="_blank" class="btn" style="background-color: #E1306C; color: white;">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                    <a href="mailto:mohan.riza@gmail.com" class="btn" style="background-color: #EA4335; color: white;">
+                        <i class="fa-solid fa-envelope"></i> Gmail
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Riza Putra Mugiartho Mohan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (window.innerWidth <= 768) {
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        let isDesktopMode = false;
+        function toggleDesktopMode() {
+            const viewport = document.getElementById('viewport');
+            const btnText = document.getElementById('btn-text');
+            const navLinks = document.getElementById('navLinks');
+
+            if (!isDesktopMode) {
+                viewport.setAttribute('content', 'width=1200, initial-scale=0.3, maximum-scale=3.0, user-scalable=yes');
+                btnText.innerText = "Kembali ke Mode HP";
+                navLinks.classList.remove('active');
+                isDesktopMode = true;
+            } else {
+                viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                btnText.innerText = "Lihat Mode Laptop";
+                isDesktopMode = false;
+            }
+        }
+    </script>
+</body>
+</html>
