@@ -90,7 +90,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section - Flexbox Layout untuk Teks & Foto */
+        /* Hero Section */
         #home {
             padding: 8rem 0 2rem 0;
             display: flex;
@@ -121,7 +121,6 @@
             color: var(--accent-color);
         }
 
-        /* Pembungkus Foto Profil */
         .hero-image {
             opacity: 0;
             animation: munculDariAtas 0.8s ease-out 0.4s forwards;
@@ -245,7 +244,6 @@
             margin-top: 3px;
         }
 
-        /* Contact Wrapper */
         .contact-wrapper {
             display: flex;
             flex-direction: column;
@@ -257,6 +255,7 @@
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn {
@@ -359,7 +358,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <li><a href="#tentang" onclick="toggleMenu()">Tentang</a></li>
-                <li><a href="#pengalaman" onclick="toggleMenu()">Pengalaman</a></li>
+                <li><a href="#pengalaman" onclick="pengalaman()">Pengalaman</a></li>
                 <li><a href="#hobi" onclick="toggleMenu()">Hobi</a></li>
                 <li><a href="#kontak" onclick="toggleMenu()">Kontak</a></li>
             </ul>
@@ -369,7 +368,6 @@
     <section id="home">
         <div class="container">
             <div class="hero-container">
-                
                 <div class="hero-content">
                     <h3 style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 0.3rem;">Halo semua, saya</h3>
                     <h1><span>Riza Putra Mugiartho Mohan</span></h1>
@@ -387,11 +385,9 @@
                         <a href="#kontak" class="btn btn-alt">Hubungi Saya</a>
                     </div>
                 </div>
-
                 <div class="hero-image">
                     <img src="https://i.ibb.co.com/TM89B5mm/96919.jpg" alt="Foto Riza Putra Mugiartho Mohan">
                 </div>
-
             </div>
         </div>
     </section>
@@ -403,35 +399,22 @@
                 <p style="font-size: 1rem; color: var(--text-color); text-align: center; margin-bottom: 1.2rem;">
                     "Saya adalah seorang <strong>INFP</strong> yang memiliki komitmen kuat dalam perkembangan diri dan penyelesaian masalah secara terstruktur."
                 </p>
-                
                 <div class="personality-grid">
                     <div class="p-item">
                         <i class="fa-solid fa-brain"></i>
-                        <div>
-                            <h4>Sabar & Solutif</h4>
-                            <p>Menghadapi tantangan teknis dengan kepala dingin dan selalu mencari jalan keluar terbaik.</p>
-                        </div>
+                        <div><h4>Sabar & Solutif</h4><p>Menghadapi tantangan teknis dengan kepala dingin.</p></div>
                     </div>
                     <div class="p-item">
                         <i class="fa-solid fa-users"></i>
-                        <div>
-                            <h4>Mudah Beradaptasi</h4>
-                            <p>Mampu bersosialisasi dengan cepat dan fleksibel ketika memasuki lingkungan baru.</p>
-                        </div>
+                        <div><h4>Mudah Beradaptasi</h4><p>Mampu bersosialisasi dengan cepat.</p></div>
                     </div>
                     <div class="p-item">
                         <i class="fa-solid fa-fire-flame-curved"></i>
-                        <div>
-                            <h4>Semangat Hal Baru</h4>
-                            <p>Memiliki rasa ingin tahu yang tinggi dan antusiasme besar terhadap teknologi baru.</p>
-                        </div>
+                        <div><h4>Semangat Hal Baru</h4><p>Antusiasme besar terhadap teknologi.</p></div>
                     </div>
                     <div class="p-item">
                         <i class="fa-solid fa-infinity"></i>
-                        <div>
-                            <h4>Konsisten</h4>
-                            <p>Menjaga ritme kerja jangka panjang demi mencapai hasil maksimal pada setiap proyek.</p>
-                        </div>
+                        <div><h4>Konsisten</h4><p>Menjaga ritme kerja jangka panjang.</p></div>
                     </div>
                 </div>
             </div>
@@ -445,22 +428,22 @@
                 <div class="card">
                     <i class="fa-solid fa-server"></i>
                     <h3>Konfigurasi MikroTik</h3>
-                    <p>Konfigurasi jaringan menggunakan perangkat MikroTik, termasuk setup jaringan Ethernet dan pembuatan sistem Hotspot.</p>
+                    <p>Konfigurasi jaringan menggunakan perangkat MikroTik.</p>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-network-wired"></i>
                     <h3>Instalasi Fiber Optic (FO)</h3>
-                    <p>Keahlian praktis dalam penanganan, penarikan, dan pemasangan kabel Fiber Optic untuk infrastruktur berkecepatan tinggi.</p>
+                    <p>Pemasangan kabel Fiber Optic untuk infrastruktur.</p>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-video"></i>
                     <h3>Pemasangan CCTV</h3>
-                    <p>Melakukan instalasi hardware, penarikan kabel koaksial/UTP, hingga konfigurasi sistem keamanan CCTV.</p>
+                    <p>Instalasi hardware hingga sistem keamanan.</p>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-robot"></i>
                     <h3>Robotika & IoT (ESP32)</h3>
-                    <p>Berhasil merakit dan memprogram lengan robot (Arm Robot) skala kecil berbasis mikrokontroler ESP32.</p>
+                    <p>Program lengan robot berbasis ESP32.</p>
                 </div>
             </div>
         </div>
@@ -468,28 +451,28 @@
 
     <section id="hobi" style="background-color: #111a2e;">
         <div class="container">
-            <h2 class="section-title">Hobi & Ketertarikan (Bisa Diklik)</h2>
+            <h2 class="section-title">Hobi & Ketertarikan</h2>
             <div class="grid">
                 
-                <a href="https://www.tradingview.com/symbols/XAUUSD/" target="_blank" class="card-link">
+                <a href="https://www.tradingview.com/symbols/IDX-ICBP/" target="_blank" class="card-link">
                     <div class="card">
                         <i class="fa-solid fa-chart-line" style="color: #4ade80;"></i>
                         <h3>Trading & Finansial</h3>
-                        <p>Aktif memantau pergerakan market trading untuk menganalisis tren harga dan peluang pasar. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik untuk pantau XAUUSD &rarr;</strong></p>
+                        <p>Memantau pergerakan harga saham perusahaan favorit. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Pantau ICBP (Indofood) &rarr;</strong></p>
                     </div>
                 </a>
 
                 <div class="card">
                     <i class="fa-solid fa-palette" style="color: #f43f5e;"></i>
                     <h3>Menggambar & Seni</h3>
-                    <p>Suka menuangkan ide kreativitas dan mengasah fokus lewat hobi menggambar di waktu luang.</p>
+                    <p>Menuangkan ide kreativitas di waktu luang.</p>
                 </div>
 
                 <a href="https://www.instagram.com/explore/tags/mainsilatjakarta/" target="_blank" class="card-link">
                     <div class="card">
                         <i class="fa-solid fa-user-ninja" style="color: #ef4444;"></i>
                         <h3>Seni Bela Diri</h3>
-                        <p>Menekuni olahraga Pencak Silat sebagai sarana melatih disiplin dan pertahanan diri. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat profil Silat &rarr;</strong></p>
+                        <p>Menekuni olahraga Pencak Silat. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat profil Silat &rarr;</strong></p>
                     </div>
                 </a>
 
@@ -497,15 +480,15 @@
                     <div class="card">
                         <i class="fa-solid fa-dumbbell" style="color: #fbbf24;"></i>
                         <h3>Kesehatan & Gym</h3>
-                        <p>Rutin melakukan latihan beban di gym untuk menjaga kebugaran tubuh tetap prima. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat lokasi Gym &rarr;</strong></p>
+                        <p>Latihan beban untuk kebugaran tubuh. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat lokasi Gym &rarr;</strong></p>
                     </div>
                 </a>
 
-                <a href="https://tk8.tekken.com/" target="_blank" class="card-link">
+                <a href="https://tekken.com/" target="_blank" class="card-link">
                     <div class="card">
                         <i class="fa-solid fa-gamepad" style="color: #a855f7;"></i>
-                        <h3>Gaming (Tekken 8)</h3>
-                        <p>Menggemari game kompetitif fighting, khususnya mengasah strategi pertarungan di Tekken 8. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik kunjungi situs Tekken &rarr;</strong></p>
+                        <h3>Gaming (Tekken)</h3>
+                        <p>Mengasah strategi di arena pertarungan Tekken. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik situs Tekken &rarr;</strong></p>
                     </div>
                 </a>
 
@@ -513,10 +496,9 @@
                     <div class="card">
                         <i class="fa-solid fa-volleyball" style="color: #3b82f6;"></i>
                         <h3>Olahraga Voli</h3>
-                        <p>Senang bermain bola voli bersama tim untuk melatih kerja sama dan refleks. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik info Anime Haikyuu!! &rarr;</strong></p>
+                        <p>Melatih kerja sama tim. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik info Haikyuu!! &rarr;</strong></p>
                     </div>
                 </a>
-
             </div>
         </div>
     </section>
@@ -534,6 +516,9 @@
                     </a>
                     <a href="https://instagram.com/rizzamohann2330" target="_blank" class="btn" style="background-color: #E1306C; color: white;">
                         <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://tiktok.com/@mohansbr.limited" target="_blank" class="btn" style="background-color: #000000; color: white;">
+                        <i class="fa-brands fa-tiktok"></i> TikTok
                     </a>
                     <a href="mailto:mohan.riza@gmail.com" class="btn" style="background-color: #EA4335; color: white;">
                         <i class="fa-solid fa-envelope"></i> Gmail
