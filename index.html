@@ -19,6 +19,7 @@
             --bg-color: #0f172a;
             --card-bg: #1e293b;
             --accent-color: #38bdf8;
+            --neon-blue: #00e5ff; /* Warna Biru Neon */
             --text-color: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -117,8 +118,10 @@
             line-height: 1.2;
         }
 
+        /* Nama Neon Biru */
         .hero-content h1 span {
-            color: var(--accent-color);
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
         }
 
         .hero-image {
@@ -358,7 +361,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <li><a href="#tentang" onclick="toggleMenu()">Tentang</a></li>
-                <li><a href="#pengalaman" onclick="pengalaman()">Pengalaman</a></li>
+                <li><a href="#pengalaman" onclick="toggleMenu()">Pengalaman</a></li>
                 <li><a href="#hobi" onclick="toggleMenu()">Hobi</a></li>
                 <li><a href="#kontak" onclick="toggleMenu()">Kontak</a></li>
             </ul>
@@ -472,7 +475,7 @@
                     <div class="card">
                         <i class="fa-solid fa-user-ninja" style="color: #ef4444;"></i>
                         <h3>Seni Bela Diri</h3>
-                        <p>Menekuni olahraga Pencak Silat. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat profil Silat &rarr;</strong></p>
+                        <p>Menekuni olahraga Pencak Silat. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Main silat jakarta &rarr;</strong></p>
                     </div>
                 </a>
 
@@ -480,23 +483,21 @@
                     <div class="card">
                         <i class="fa-solid fa-dumbbell" style="color: #fbbf24;"></i>
                         <h3>Kesehatan & Gym</h3>
-                        <p>Latihan beban untuk kebugaran tubuh. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik lihat lokasi Gym &rarr;</strong></p>
+                        <p>Latihan beban untuk kebugaran tubuh. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Lokasi energy gym &rarr;</strong></p>
                     </div>
                 </a>
+
+                <div class="card">
+                    <i class="fa-solid fa-microchip" style="color: #38bdf8;"></i>
+                    <h3>AI Prompting</h3>
+                    <p>Eksplorasi pembuatan prompt kreatif dan teknis menggunakan <strong>Claude, ChatGPT, dan Gemini</strong> untuk produktivitas.</p>
+                </div>
 
                 <a href="https://tekken.com/" target="_blank" class="card-link">
                     <div class="card">
                         <i class="fa-solid fa-gamepad" style="color: #a855f7;"></i>
                         <h3>Gaming (Tekken)</h3>
                         <p>Mengasah strategi di arena pertarungan Tekken. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik situs Tekken &rarr;</strong></p>
-                    </div>
-                </a>
-
-                <a href="https://myanimelist.net/anime/20583/Haikyuu" target="_blank" class="card-link">
-                    <div class="card">
-                        <i class="fa-solid fa-volleyball" style="color: #3b82f6;"></i>
-                        <h3>Olahraga Voli</h3>
-                        <p>Melatih kerja sama tim. <br><strong style="color: var(--accent-color); font-size: 0.85rem;">Klik info Haikyuu!! &rarr;</strong></p>
                     </div>
                 </a>
             </div>
