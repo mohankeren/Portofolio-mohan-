@@ -5,6 +5,9 @@
     <title>Portofolio | Riza Putra Mugiartho Mohan</title>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
     <style>  
+    html {
+    scroll-behavior: smooth;
+    }
     body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -41,10 +44,10 @@ body::after {
 
 .space-planet {
     position: fixed;
-    top: 100px;
-    right: -100px;
-    width: 250px;
-    height: 250px;
+    top: 50px;
+    right: -250px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, #8b5cf6, #312e81);
     box-shadow: 0 0 50px rgba(139,92,246,.5);
@@ -55,8 +58,7 @@ body::after {
             margin: 0;  
             padding: 0;  
             box-sizing: border-box;  
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-            scroll-behavior: smooth;  
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
         }  :root {  
         --bg-color: #0f172a;  
         --card-bg: #1e293b;  
@@ -204,8 +206,9 @@ body::after {
     }  
 
     /* Section Styles */  
-    section {   
-        padding: 3rem 0;  
+    section {
+    padding: 2rem 0;
+    position: relative;
     }  
 
     .section-title {  
@@ -246,19 +249,22 @@ body::after {
         margin-top: 1.5rem;  
     }  
 
-    .card {  
-        background-color: var(--card-bg);  
-        padding: 1.8rem;  
-        border-radius: 12px;  
-        border: 1px solid #334155;  
-        transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;  
-        height: 100%;  
-    }  
+    .card {
+    background: rgba(30,41,59,0.75);
+    backdrop-filter: blur(12px);
+    padding: 1.8rem;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(0,229,255,0.08);
+    height: 100%;
+    }
 
-    .card:hover {  
-        transform: translateY(-5px);  
-        border-color: var(--accent-color);  
-    }  
+    .card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+    box-shadow: 0 0 25px rgba(0,229,255,0.35);
+    }
 
     .card-link {  
         text-decoration: none;  
@@ -437,7 +443,7 @@ body::after {
     </div>  
 </section>  
 
-<section id="tentang" style="background-color: #0b111e;">  
+<section id="tentang"   
     <div class="container">  
         <h2 class="section-title">Karakter & Etos Kerja</h2>  
         <div class="about-box">  
@@ -494,7 +500,7 @@ body::after {
     </div>  
 </section>  
 
-<section id="hobi" style="background-color: #111a2e; padding: 4rem 0;">  
+<section id="hobi"   
     <div class="container">  
         
         <!-- BAGIAN HOBI -->
